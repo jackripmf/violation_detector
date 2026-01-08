@@ -1,0 +1,50 @@
+# Создаем файл .gitignore
+@"
+# ==================== VIDEO FILES (НЕ ПУШИМ) ====================
+# Все видеоформаты
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.flv
+*.wmv
+
+# ==================== VIOLATIONS FOLDER (НЕ ПУШИМ) ====================
+violations/
+forbidden_items/
+
+# ==================== VIRTUAL ENVIRONMENTS ====================
+.venv*/
+venv*/
+env/
+.venv1/
+
+# ==================== PYTHON TEMP FILES ====================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ==================== BUILD & DISTRIBUTION ====================
+build/
+dist/
+*.egg-info/
+
+# ==================== IDE FILES ====================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ==================== SYSTEM FILES ====================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==================== LOGS & DATA ====================
+*.log
+*.sqlite3
+*.db
+"@ | Out-File -FilePath .gitignore -Encoding UTF8
