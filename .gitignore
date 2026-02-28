@@ -1,0 +1,73 @@
+# ==================== EXPLICIT PROJECT EXCLUDES ====================
+# Не публикуем учебную папку целиком
+/edu/
+
+# Не публикуем только эти два debug-скрипта
+/debug/start_train_server.py
+/debug/start_val_server.py
+
+# Не публикуем эти 3 модели из корня
+/yolo11n
+/yolo11n.pt
+/yolo26n
+/yolo26n.pt
+/yolov8n
+/yolov8n.pt
+
+
+# ==================== RUNTIME ARTIFACTS ====================
+# Результаты работы детекторов / временные артефакты
+/violations/
+/forbidden_items/
+/runs/
+
+# Логи и локальные БД
+*.log
+*.sqlite3
+*.db
+
+
+# ==================== PYTHON ====================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+
+# ==================== TEST / TOOL CACHES ====================
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+
+
+# ==================== BUILD / PACKAGING ====================
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+
+# ==================== VIRTUAL ENVS ====================
+.venv/
+venv/
+env/
+
+
+# ==================== IDE / EDITOR ====================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+
+# ==================== OS / LOCAL SYSTEM ====================
+.DS_Store
+Thumbs.db
+desktop.ini
+.directory

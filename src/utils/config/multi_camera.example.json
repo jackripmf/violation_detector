@@ -1,0 +1,46 @@
+{
+  "_comment_1": "Правило переопределения: camera-параметры имеют приоритет над global.",
+  "_comment_2": "Источник нужно указать ЛИБО camera_id, ЛИБО input (файл/rtsp).",
+  "_comment_3": "Список detectors задается как массив строк. extra_args пробрасываются в main.py как есть.",
+  "_comment_4": "mode=legacy -> 1 процесс на камеру; mode=centralized -> 1 процесс на все cameras (через --topology-config).",
+
+  "mode": "centralized",
+
+  "global": {
+    "_comment": "Полный набор параметров. Можно оставить как шаблон и переопределять в cameras[].",
+
+    "input": null,
+    "camera_id": null,
+
+    "output": "violations",
+    "runtime_engine": "centralized",
+
+    "detectors": ["all"],
+
+    "no_preview": false,
+    "show_fps": true,
+
+    "device": "cuda:0",
+    "no_half": false,
+    "imgsz": 640,
+    "source_queue_size": 8,
+    "scheduler_infer_queue_size": 64,
+    "source_drop_policy": "drop_oldest",
+    "infer_workers": 1,
+    "postprocess_workers": 1,
+    "scheduler_dispatch_sleep": 0.003,
+
+    "extra_args": []
+  },
+
+  "cameras": [
+    {
+      "_comment": "Камера #1.",
+      "camera_id": 0
+    },
+    {
+      "_comment": "Камера #2.",
+      "camera_id": 4
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+[tool.ruff]
+target-version = "py313"
+line-length = 120
+exclude = [
+  "edu",
+  "debug",
+]
+
+[tool.ruff.lint]
+select = [
+  "E9",
+  "F63",
+  "F7",
+  "F82",
+  "F401",
+  "F841",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"start_scripts/*.py" = ["E402"]
+"/home/kajitsu/violation_detector-main/src/processing/universal_processor.py" = ["E402"]
+"tests/*.py" = ["F401", "E402"]
+
+[tool.mypy]
+python_version = "3.13"
+files = [
+  "src/inference/model_path_resolver.py",
+  "src/utils/io/source_redaction.py",
+  "src/utils/config/detector_aliases.py",
+  "src/utils/common/log_context.py",
+  "src/utils/config/detector_schedule.py",
+  "start_scripts/multi_camera_launcher.py",
+]
+follow_imports = "skip"
+ignore_missing_imports = true
+warn_unused_configs = true
+show_error_codes = true

@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Ruff
+        run: python -m ruff check src start_scripts tests
+
+      - name: Mypy
+        run: python -m mypy
+
+      - name: Bandit
+        run: python -m bandit -q -r src start_scripts --severity-level medium --confidence-level medium
+
+      - name: Pip audit
+        run: python -m pip_audit -r requirements.txt
+
+      - name: Pytest
+        run: pytest -q

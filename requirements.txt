@@ -1,0 +1,22 @@
+# ===========================================
+# Violation Detector System - Full project dependencies
+# Один файл установки для runtime, тестов и quality gates.
+# ===========================================
+
+# ----- ML / Inference -----
+torch==2.10.0
+ultralytics==8.4.14
+
+# ----- Computer Vision / Numerical -----
+opencv-python==4.13.0.92
+numpy==2.4.2
+
+# ----- Tests -----
+pytest==9.0.2
+pytest-cov==7.0.0
+
+# ----- Quality gates -----
+ruff==0.13.0
+mypy==1.18.2
+bandit==1.8.6
+pip-audit==2.9.0
