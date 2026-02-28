@@ -711,7 +711,7 @@ flowchart LR
     A[camera_0] --> B[SourceManager]
     C[camera_4] --> B
     D[rtsp://...] --> B
-    E[/data/archive.mp4] --> B
+    E["/data/archive.mp4"] --> B
 
     B --> F{Тип источника}
     F -->|camera| G[OpenCV camera backend]
